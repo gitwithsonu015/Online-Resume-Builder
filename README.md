@@ -53,5 +53,5 @@ e:/Resume Builder/
 
 **Production Ready - No Setup Required!**
 
-Made with ❤️ by BLACKBOXAI
+Made with SONU KUMAR UPADHYAY
 
