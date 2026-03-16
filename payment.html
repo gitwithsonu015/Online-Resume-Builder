@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Payment - Resume Builder</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="config.js"></script>
+</head>
+<body class="bg-gradient-to-br from-purple-500 to-orange-500 min-h-screen flex items-center justify-center p-4">
+    <div class="text-center text-white">
+        <div id="checkout-container"></div>
+        <div id="payment-success" class="hidden">
+            <h1 class="text-4xl font-bold mb-4">✅ Payment Successful!</h1>
+            <p class="text-xl mb-6">Redirecting to download...</p>
+            <script>
+                // Auto redirect back to index.html after success (in prod use Stripe success_url)
+                setTimeout(() => window.location.href = 'index.html?paid=true', 2000);
+            </script>
+        </div>
+    </div>
+    <script>
+        const stripe = Stripe(APP_CONFIG.stripePublishableKey);
+        // This page would be loaded via Stripe Checkout redirect_url
+        // Stripe handles the form; on success shows #payment-success
+    </script>
+</body>
+</html>
